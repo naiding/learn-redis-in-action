@@ -2,69 +2,38 @@
 
 This guide provides hands-on practice with Redis commands. Make sure you've followed the setup instructions in README.md before starting.
 
-## Lists Tutorial (Completed)
+## Data Types Overview
 
-### Basic List Operations
-```redis
-# Add items to the end of list
-RPUSH todos "Learn Redis Lists"
-RPUSH todos "Practice Redis Commands" "Build Something Cool"
+### 1. Lists (Completed)
+Lists are implemented as linked lists in Redis, making them perfect for:
+- Task queues
+- Social media timelines
+- Recent activity logs
 
-# View all items
-LRANGE todos 0 -1
+For detailed examples and best practices, see `redis-lists.md`
 
-# Add to beginning of list
-LPUSH todos "First Priority Task"
-
-# Get list length
-LLEN todos
-
-# Remove and return last item
-RPOP todos
-
-# Remove and return first item
-LPOP todos
-```
-
-### Advanced List Operations
-```redis
-# Insert before specific item
-LINSERT todos BEFORE "Learn Redis Lists" "Read Redis Documentation"
-
-# Get item by position
-LINDEX todos 1
-
-# Update item at position
-LSET todos 0 "Updated First Task"
-
-# Trim list to specific range
-LTRIM todos 0 1
-```
-
-## Next Topics To Explore
-
-### 1. Sets (Next Session)
+### 2. Sets (Next Session)
 - Perfect for unique collections
 - Commands we'll cover: SADD, SMEMBERS, SISMEMBER, SREM
 - Use cases: tags, unique visitors, etc.
 
-### 2. Hashes
+### 3. Hashes
 - Store object-like data
 - Commands we'll cover: HSET, HGET, HGETALL, HDEL
 - Use cases: user profiles, product details, etc.
 
-### 3. Sorted Sets
+### 4. Sorted Sets
 - Ranked/scored items
 - Commands we'll cover: ZADD, ZRANGE, ZRANK
 - Use cases: leaderboards, priority queues
 
-### 4. Pub/Sub
+### 5. Pub/Sub
 - Real-time messaging
 - Commands we'll cover: PUBLISH, SUBSCRIBE
 - Use cases: chat systems, notifications
 
 ## Tips
-- Use `HELP @list` to see all list-related commands
+- Use `HELP @type` to see all commands for a specific type (e.g., `HELP @list`)
 - Use `HELP COMMAND` to get help for specific commands
 - Use `KEYS *` to see all existing keys
 - Use `TYPE key` to check the type of a key

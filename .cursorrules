@@ -127,3 +127,50 @@ New content here
 - Group related changes
 - Update main index when adding files
 - Keep documentation in sync 
+
+## Command Demonstration Rules
+
+### 1. Command Explanation Format
+```markdown
+The command we'll use is:
+```redis
+COMMAND arg1 arg2
+```
+This command:
+- Purpose/goal of the command
+- Explanation of each argument
+- Expected output
+- Common use cases or scenarios
+```
+
+### 2. Command Examples
+```markdown
+# Add a value to a stream with auto-generated ID
+XADD mystream * field1 value1 field2 value2
+# - mystream: name of the stream
+# - *: auto-generate the ID
+# - field1/value1: first field-value pair
+# - field2/value2: second field-value pair
+```
+
+### 3. Command Categories
+For each Redis command type, explain:
+- Basic usage
+- Common options/flags
+- Return value format
+- Error conditions
+- Performance implications
+
+### 4. Interactive Learning Flow
+1. Explain the command and its purpose
+2. Show the command syntax
+3. Explain each parameter
+4. Run the command
+5. Explain the output
+6. Show variations or related commands
+
+### 5. Error Handling
+- Explain common error messages
+- Show how to fix typical mistakes
+- Demonstrate best practices
+- Provide troubleshooting tips 

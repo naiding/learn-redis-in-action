@@ -1,0 +1,129 @@
+# Cursor Rules for Interactive Redis Tutorial
+
+## Project Structure
+```
+project_root/
+├── README.md              # Setup instructions and project overview
+├── docker-compose.yml     # Infrastructure setup
+├── redis-tutorial.md      # Main tutorial index and overview
+└── topic-specific/
+    ├── redis-lists.md     # Detailed Lists tutorial
+    ├── redis-streams.md   # Detailed Streams tutorial
+    └── redis-{type}.md    # Other data type tutorials
+```
+
+## Content Management Rules
+
+### 1. File Organization
+- Keep setup instructions in README.md
+- Maintain overview and index in redis-tutorial.md
+- Create separate files for detailed data type tutorials
+- Use consistent naming: redis-{type}.md
+
+### 2. Content Updates
+- PRESERVE unrelated content when updating files
+- Only modify relevant sections
+- When adding new content, maintain existing structure
+- Use clear section markers for easy updates
+
+### 3. Tutorial Structure
+Each tutorial file should follow:
+```markdown
+# {Redis Type} Deep Dive
+
+Brief introduction and context
+
+## Basic Operations
+- Core commands
+- Simple examples
+
+## Advanced Features
+- Complex operations
+- Specific use cases
+
+## Common Use Cases
+- Real-world examples
+- Practical applications
+
+## Performance Characteristics
+- Time complexity
+- Memory usage
+- Implementation details
+
+## Best Practices
+- Usage guidelines
+- Error handling
+- Scaling considerations
+```
+
+### 4. Code Examples
+- Use ```redis for Redis commands
+- Include comments for each command
+- Show both command and expected output
+- Provide real-world context
+
+### 5. Interactive Learning
+- Start with basic concepts
+- Build complexity gradually
+- Include hands-on exercises
+- Provide clear success criteria
+
+## Update Guidelines
+
+### 1. Adding New Content
+```markdown
+## Existing Section
+
+[... existing content ...]
+
+### New Subsection
+New content here
+
+[... existing content continues ...]
+```
+
+### 2. Modifying Content
+- Locate specific section to update
+- Preserve surrounding sections
+- Maintain consistent formatting
+- Update table of contents if needed
+
+### 3. Content Preservation
+- Never remove unrelated sections
+- Keep existing examples when adding new ones
+- Maintain section ordering
+- Preserve useful comments and explanations
+
+## Interaction Pattern
+
+### 1. Learning Flow
+1. Introduce concept
+2. Show basic example
+3. Provide hands-on practice
+4. Explore advanced features
+5. Discuss real-world applications
+
+### 2. Command Demonstrations
+- Clear setup instructions
+- Expected output
+- Error scenarios
+- Cleanup steps
+
+### 3. Best Practices
+- Include performance implications
+- Security considerations
+- Production readiness
+- Scaling guidance
+
+## Version Control
+
+### 1. Commit Messages
+- Use descriptive messages
+- Specify which tutorial was updated
+- Mention type of change (add/modify/fix)
+
+### 2. File Management
+- Commit tutorial files separately
+- Group related changes
+- Update main index when adding files
+- Keep documentation in sync 

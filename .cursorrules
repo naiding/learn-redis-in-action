@@ -8,169 +8,197 @@ project_root/
 ├── redis-tutorial.md      # Main tutorial index and overview
 └── topic-specific/
     ├── redis-lists.md     # Detailed Lists tutorial
+    ├── redis-sets.md      # Detailed Sets tutorial
     ├── redis-streams.md   # Detailed Streams tutorial
     └── redis-{type}.md    # Other data type tutorials
 ```
 
-## Content Management Rules
+## Content Organization Rules
 
-### 1. File Organization
-- Keep setup instructions in README.md
-- Maintain overview and index in redis-tutorial.md
-- Create separate files for detailed data type tutorials
-- Use consistent naming: redis-{type}.md
-
-### 2. Content Updates
-- PRESERVE unrelated content when updating files
-- Only modify relevant sections
-- When adding new content, maintain existing structure
-- Use clear section markers for easy updates
-
-### 3. Tutorial Structure
-Each tutorial file should follow:
+### 1. File Structure
+Each tutorial file should follow this structure:
 ```markdown
 # {Redis Type} Deep Dive
 
 Brief introduction and context
 
-## Basic Operations
-- Core commands
-- Simple examples
+## 1. Fundamentals
+- Key differences from other types
+- Basic concepts
+- Core operations
 
-## Advanced Features
-- Complex operations
-- Specific use cases
+## 2. Type-Specific Operations
+- Detailed command usage
+- Operation patterns
+- Command combinations
 
-## Common Use Cases
+## 3. Common Use Cases
 - Real-world examples
-- Practical applications
+- Implementation patterns
+- Practical scenarios
 
-## Performance Characteristics
+## 4. Performance Characteristics
 - Time complexity
 - Memory usage
-- Implementation details
+- Performance tips
 
-## Best Practices
-- Usage guidelines
+## 5. Best Practices
+- Design patterns
 - Error handling
-- Scaling considerations
+- Memory management
+
+## 6. Common Patterns
+- Frequently used solutions
+- Pattern implementations
+- Pattern trade-offs
+
+## 7. Production Considerations
+- Monitoring
+- Scaling
+- Maintenance
+
+## 8. When to Use This Type
+- Use cases for this type
+- Comparison with alternatives
+- Trade-off analysis
 ```
 
-### 4. Code Examples
+### 2. Content Guidelines
+
+#### Command Examples
+```redis
+# Descriptive comment about what the command does
+COMMAND key value  # Inline comment about result
+
+# Multi-line command sequence
+COMMAND1 key value
+COMMAND2 key value  # With explanation
+```
+
+#### Code Blocks
 - Use ```redis for Redis commands
 - Include comments for each command
-- Show both command and expected output
-- Provide real-world context
+- Show expected output where relevant
+- Provide context and explanations
 
-### 5. Interactive Learning
-- Start with basic concepts
-- Build complexity gradually
-- Include hands-on exercises
-- Provide clear success criteria
+#### Use Cases
+- Start with simple examples
+- Build up to complex scenarios
+- Include real-world context
+- Show complete solutions
 
-## Update Guidelines
+### 3. Writing Style
 
-### 1. Adding New Content
-```markdown
-## Existing Section
+#### Command Documentation
+- Clear purpose explanation
+- Parameter descriptions
+- Return value format
+- Common usage patterns
 
-[... existing content ...]
+#### Best Practices
+- Explain the "why" not just "how"
+- Include anti-patterns to avoid
+- Provide performance implications
+- Show error handling
 
-### New Subsection
-New content here
+#### Performance Notes
+- Include time complexity
+- Memory usage characteristics
+- Scaling considerations
+- Performance tips
 
-[... existing content continues ...]
-```
+### 4. Content Updates
 
-### 2. Modifying Content
-- Locate specific section to update
-- Preserve surrounding sections
+#### Adding New Content
+- Follow the established section order
 - Maintain consistent formatting
-- Update table of contents if needed
+- Include practical examples
+- Cross-reference related topics
 
-### 3. Content Preservation
-- Never remove unrelated sections
-- Keep existing examples when adding new ones
-- Maintain section ordering
-- Preserve useful comments and explanations
+#### Modifying Content
+- Preserve section structure
+- Update related sections
+- Keep examples consistent
+- Maintain formatting
 
-## Interaction Pattern
-
-### 1. Learning Flow
-1. Introduce concept
-2. Show basic example
-3. Provide hands-on practice
-4. Explore advanced features
-5. Discuss real-world applications
-
-### 2. Command Demonstrations
-- Clear setup instructions
-- Expected output
-- Error scenarios
-- Cleanup steps
-
-### 3. Best Practices
-- Include performance implications
-- Security considerations
-- Production readiness
-- Scaling guidance
+#### Content Review
+- Check command accuracy
+- Verify example outputs
+- Test code snippets
+- Update cross-references
 
 ## Version Control
 
 ### 1. Commit Messages
-- Use descriptive messages
-- Specify which tutorial was updated
-- Mention type of change (add/modify/fix)
+Format: `type: description`
+Types:
+- docs: Documentation changes
+- feat: New features or content
+- fix: Content corrections
+- style: Formatting changes
 
 ### 2. File Management
-- Commit tutorial files separately
-- Group related changes
-- Update main index when adding files
-- Keep documentation in sync 
+- One topic per file
+- Consistent file naming
+- Regular backups
+- Clear change history
 
-## Command Demonstration Rules
+## Quality Standards
 
-### 1. Command Explanation Format
-```markdown
-The command we'll use is:
-```redis
-COMMAND arg1 arg2
-```
-This command:
-- Purpose/goal of the command
-- Explanation of each argument
-- Expected output
-- Common use cases or scenarios
-```
+### 1. Content Quality
+- Accurate information
+- Clear explanations
+- Practical examples
+- Complete coverage
 
-### 2. Command Examples
-```markdown
-# Add a value to a stream with auto-generated ID
-XADD mystream * field1 value1 field2 value2
-# - mystream: name of the stream
-# - *: auto-generate the ID
-# - field1/value1: first field-value pair
-# - field2/value2: second field-value pair
-```
+### 2. Code Quality
+- Working examples
+- Clear comments
+- Best practices
+- Error handling
 
-### 3. Command Categories
-For each Redis command type, explain:
-- Basic usage
-- Common options/flags
-- Return value format
-- Error conditions
-- Performance implications
+### 3. Documentation
+- Clear structure
+- Consistent formatting
+- Complete information
+- Regular updates
 
-### 4. Interactive Learning Flow
-1. Explain the command and its purpose
-2. Show the command syntax
-3. Explain each parameter
-4. Run the command
-5. Explain the output
-6. Show variations or related commands
+## Interactive Demonstrations
 
-### 5. Error Handling
-- Explain common error messages
-- Show how to fix typical mistakes
-- Demonstrate best practices
-- Provide troubleshooting tips 
+### 1. Example Consistency
+- Use the same examples from tutorials during interactive demos
+- Never create different examples for the same concept
+- If a command doesn't work, update both the demo and tutorial
+- Keep examples synchronized across all interactions
+
+### 2. Demo Flow
+- Follow the same progression as in tutorials
+- Start with basic examples before complex ones
+- Use the exact same key names and values
+- Maintain consistency in command parameters
+
+### 3. Tutorial Validation
+- Test all commands before adding to tutorials
+- Verify commands work in the current Redis version
+- Document any version-specific features
+- Update tutorials if commands behave differently
+
+### 4. Error Handling
+- If a command fails during demo, investigate immediately
+- Update tutorial if the error reveals a problem
+- Document any prerequisites or requirements
+- Add error scenarios to tutorials if commonly encountered
+
+## Maintenance
+
+### 1. Regular Updates
+- Check command accuracy
+- Update for new Redis versions
+- Refresh examples
+- Add new patterns
+
+### 2. Content Review
+- Technical accuracy
+- Example validity
+- Link checking
+- Format consistency 

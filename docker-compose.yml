@@ -7,11 +7,12 @@ services:
       - redis_data:/data
 
   redisinsight:
-    image: redislabs/redisinsight:latest
+    image: redis/redisinsight:latest
     ports:
-      - "8001:8001"
+      - "5540:5540"
     volumes:
-      - redisinsight:/db
+      - redisinsight:/data
+    restart: unless-stopped
 
 volumes:
   redis_data:
